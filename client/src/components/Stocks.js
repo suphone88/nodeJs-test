@@ -19,7 +19,12 @@ function Stocks() {
     <>
       <h3> Stocks List !!</h3>
       <div>
-        <ul></ul>
+        <ul>
+          {stocks.stocks &&
+            stocks.stocks.map((stock, index) => {
+              return <li key={stock._id}>{stock.code}</li>;
+            })}
+        </ul>
       </div>
     </>
   );
