@@ -9,7 +9,11 @@ mongoose
     console.log("connected to MongoDB");
   })
   .catch(console.log());
+
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
 app.use(express.json());
 
 app.use("/stock", require("./routes/stock-route"));

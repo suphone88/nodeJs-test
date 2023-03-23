@@ -3,8 +3,24 @@ const Stock = require("../models/Stock");
 
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
-  res.json("Hello World!! deploy on vercel");
+router.get("/", async (req, res, next) => {
+  try {
+    const page = parseInt(req.query.page);
+    const perpage = parseInt(req.query.perpage);
+    const offset = (page - 1) * perpage;
+    const stocks = await Stock.find().limit(perpage).skip(offset);
+    res.json({
+      code: 200,
+      message: "success",
+      data: stocks,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      code: 500,
+      message: err.message,
+    });
+  }
 });
 
 router.post("/", async (req, res, next) => {
