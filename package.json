@@ -3,5 +3,27 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.2"
-  }
+  },
+  "name": "nodejs-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suphone88/nodeJs-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suphone88/nodeJs-test/issues"
+  },
+  "homepage": "https://github.com/suphone88/nodeJs-test#readme",
+  "description": ""
 }

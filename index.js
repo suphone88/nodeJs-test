@@ -10,12 +10,11 @@ mongoose
   })
   .catch(console.log());
 const app = express();
+app.use(express.json());
+
+app.use("/stock", require("./routes/stock-route"));
 
 const port = process.env.PORT || 5000; // Use the PORT environment
-
-app.get("/", (req, res, next) => {
-  res.json("Hello World!!,Are you ok");
-});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
