@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchStocks } from "../actions/index";
+import { fetchStocks } from "../actions";
 
 function Stocks() {
   const stocks = useSelector((state) => state.stocks);
@@ -15,16 +15,24 @@ function Stocks() {
   if (!stocks) {
     return "Loading ...";
   }
+
   return (
     <>
       <h3> Stocks List !!</h3>
       <div>
-        <ul>
+        {/* <ul>
           {stocks.stocks &&
             stocks.stocks.map((stock, index) => {
               return <li key={stock._id}>{stock.code}</li>;
             })}
-        </ul>
+        </ul> */}
+      </div>
+      <div>
+        {Array.isArray(stocks)
+          ? stocks.stocks.map((element) => {
+              return <h2>{element.name}</h2>;
+            })
+          : null}
       </div>
     </>
   );
