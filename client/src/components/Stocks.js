@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchStocks } from "../actions";
 
@@ -7,7 +7,7 @@ function Stocks() {
 
   const dispatch = useDispatch();
   console.log(stocks);
-
+  //const [stocks, setStocks] = useState({});
   useEffect(() => {
     dispatch(fetchStocks(stocks));
   }, [dispatch]);
@@ -29,7 +29,7 @@ function Stocks() {
       </div>
       <div>
         {Array.isArray(stocks)
-          ? stocks.stocks.map((element) => {
+          ? stocks.map((element) => {
               return <h2>{element.name}</h2>;
             })
           : null}
