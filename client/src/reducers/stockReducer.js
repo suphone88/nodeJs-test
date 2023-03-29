@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const stockReducer = (state = initialState, action) => {
-  //console.log("Reducer Stocks >>", action.payload);
+  console.log("Reducer Stocks...", action.payload);
   switch (action.type) {
     case FETCH_STOCKS:
       console.log("Reducer Stock >>", action.payload);

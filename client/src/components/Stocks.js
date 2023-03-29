@@ -1,41 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchStocks } from "../actions";
 
 function Stocks() {
   const stocks = useSelector((state) => state.stocks);
-
-  const dispatch = useDispatch();
   console.log(stocks);
-  //const [stocks, setStocks] = useState({});
+  const dispatch = useDispatch();
+  //console.log(stocks);
+
   useEffect(() => {
-    dispatch(fetchStocks(stocks));
+    dispatch(fetchStocks());
   }, [dispatch]);
 
   if (!stocks) {
     return "Loading ...";
-  }
-
-  return (
-    <>
-      <h3> Stocks List !!</h3>
-      <div>
-        {/* <ul>
-          {stocks.stocks &&
-            stocks.stocks.map((stock, index) => {
-              return <li key={stock._id}>{stock.code}</li>;
+  } else {
+    return (
+      <>
+        <h3> Stocks List !!</h3>
+        <ul>
+          {stocks.stocks.data &&
+            stocks.stocks.data.map((stock) => {
+              return (
+                <li key={stock._id}>
+                  Code No:{stock.code} - Name:{stock.name} - Price:{stock.price}
+                </li>
+              );
             })}
-        </ul> */}
-      </div>
-      <div>
-        {Array.isArray(stocks)
-          ? stocks.map((element) => {
-              return <h2>{element.name}</h2>;
-            })
-          : null}
-      </div>
-    </>
-  );
+        </ul>
+      </>
+    );
+  }
 }
 
 export default Stocks;
