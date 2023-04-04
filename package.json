@@ -9,11 +9,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "nodemon": "^2.0.22"
   },
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "nodemon index",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
