@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.e3808706.js",
-    "index.html": "/index.html",
-    "main.e3808706.js.map": "/static/js/main.e3808706.js.map"
+    "main.js": "/nodeJs-test/static/js/main.e3808706.js",
+    "index.html": "/nodeJs-test/index.html",
+    "main.e3808706.js.map": "/nodeJs-test/static/js/main.e3808706.js.map"
   },
   "entrypoints": [
     "static/js/main.e3808706.js"
