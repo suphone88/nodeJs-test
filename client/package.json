@@ -1,4 +1,5 @@
 {
+  "homepage": "http://suphone88.github.io/nodeJs-test",
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +20,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "homepage": "https://nodetestblog.com",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
